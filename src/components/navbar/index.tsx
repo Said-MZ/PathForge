@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 const Navbar = () => {
   return (
-    <nav className="w-full  border-b-2 border-neutral-900 shadow-md ">
+    <nav className="w-full  border-b-2 dark:border-neutral-900 border-neutral-300 shadow-md ">
       <div className="max-w-[1200px] px-4 sm-px-6 flex justify-between items-center mx-auto py-2 ">
         <div>
           <Link
