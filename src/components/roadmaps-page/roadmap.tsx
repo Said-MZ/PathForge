@@ -32,9 +32,9 @@ const Roadmap = ({
   return (
     <Link
       href={`/roadmap/${roadmap.id}`}
-      className="w-full p-4 bg-neutral-900 shadow-md rounded-md border-2 relative"
+      className="w-full p-4 bg-neutral-900 shadow-md rounded-md border-2 relative group hover:brightness-125 transition-all"
     >
-      <div className="absolute -top-4 right-2 sm:text-5xl text-3xl">
+      <div className="absolute -top-4 right-2 sm:text-5xl text-3xl group-hover:rotate-[20deg] transition-transform duration-500">
         {getRandomEmoji()}
       </div>
       <div className="flex items-center mb-4 gap-2">
