@@ -32,13 +32,13 @@ const Roadmap = ({
   return (
     <Link
       href={`/roadmap/${roadmap.id}`}
-      className="w-full p-4 bg-neutral-900 shadow-md rounded-md border-2 relative group hover:brightness-125 transition-all"
+      className="w-full p-4 dark:bg-neutral-900 bg-neutral-100  dark:text-neutral-100 text-neutral-900 shadow-md rounded-md border-2 relative group dark:hover:brightness-125 hover:brightness-90 transition-all"
     >
       <div className="absolute -top-4 right-2 sm:text-5xl text-3xl group-hover:rotate-[20deg] transition-transform duration-500">
         {getRandomEmoji()}
       </div>
       <div className="flex items-center mb-4 gap-2">
-        <Avatar>
+        <Avatar className="shadow-sm border-[1px]">
           <AvatarImage src={roadmap.sharedBy.avatar} />
           <AvatarFallback>
             {roadmap.sharedBy.name
@@ -48,12 +48,10 @@ const Roadmap = ({
               .toUpperCase()}
           </AvatarFallback>
         </Avatar>
-        <span className="text-neutral-100">{roadmap.sharedBy.name}</span>
+        <span>{roadmap.sharedBy.name}</span>
       </div>
 
-      <h2 className="text-2xl font-bold text-neutral-100 mb-4">
-        {roadmap.name}
-      </h2>
+      <h2 className="text-2xl font-bold mb-4">{roadmap.name}</h2>
       <p>{roadmap.description}</p>
     </Link>
   );

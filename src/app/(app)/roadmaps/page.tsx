@@ -16,7 +16,7 @@ const RoadMapsPage = () => {
           <div className="w-full h-[1px] bg-neutral-300 dark:bg-neutral-700"></div>
         </section>
         <section>
-          <h2 className="text-2xl sm:text-5xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b  dark:text-neutral-50 text-neutral-900 py-8">
+          <h2 className="text-2xl sm:text-5xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b  dark:text-neutral-50 text-neutral-800 py-8">
             استكشف خرائط التعلم المتاحة
           </h2>
         </section>
