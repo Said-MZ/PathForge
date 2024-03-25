@@ -1,6 +1,6 @@
 import RoadmapsHeader from "@/components/roadmaps-page/header";
 import Roadmaps from "@/components/roadmaps-page/roadmaps";
-import RoadmapsFilter from "@/components/roadmaps-page/roadmaps-filter";
+import { RoadmapsFilter } from "@/components/roadmaps-page/roadmaps-filter";
 import { buttonVariants } from "@/components/ui/button";
 import Link from "next/link";
 import React from "react";
