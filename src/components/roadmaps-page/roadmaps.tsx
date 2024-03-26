@@ -1,9 +1,6 @@
 import Roadmap from "./roadmap";
 
 const Roadmaps = () => {
-  //  temporary data
-  // ------------------
-
   interface Step {
     name: string;
     description: string;
@@ -56,6 +53,8 @@ const Roadmaps = () => {
     blocks: Block[];
   }
 
+  //  temporary data
+  // ------------------
   const roadmaps: Roadmap[] = [
     {
       id: 1,

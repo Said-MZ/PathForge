@@ -24,7 +24,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={cairo.className}>
         <ThemeProvider attribute="class" defaultTheme="system">
-          <Navbar />
+          {/* <Navbar /> */}
           {children}
         </ThemeProvider>
       </body>

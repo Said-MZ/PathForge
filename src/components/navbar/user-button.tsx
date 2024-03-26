@@ -13,11 +13,15 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
 const UserButton = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  // temporary until we set up authentication
+  const isSignedIn = false;
+  //-----------------------------------------
   return (
     <>
       {isMenuOpen && (
@@ -39,8 +43,22 @@ const UserButton = () => {
           <DropdownMenuLabel>My Account</DropdownMenuLabel>
           <DropdownMenuSeparator />
           <DropdownMenuGroup>
-            <DropdownMenuItem>Profile</DropdownMenuItem>
-            <DropdownMenuItem>Settings</DropdownMenuItem>
+            {isSignedIn ? (
+              <>
+                <Link href="/profile">
+                  <DropdownMenuItem>Profile</DropdownMenuItem>
+                </Link>
+                <Link href="/settings">
+                  <DropdownMenuItem>Settings</DropdownMenuItem>
+                </Link>
+              </>
+            ) : (
+              <>
+                <Link href="/login">
+                  <DropdownMenuItem>Sign in</DropdownMenuItem>
+                </Link>
+              </>
+            )}
           </DropdownMenuGroup>
         </DropdownMenuContent>
       </DropdownMenu>
