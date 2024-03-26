@@ -15,12 +15,11 @@ import {
 } from "@/components/ui/dropdown-menu";
 import Link from "next/link";
 
-const inter = Inter({ subsets: ["latin"] });
-
 const UserButton = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   // temporary until we set up authentication
   const isSignedIn = false;
+  const userName = "اسم المستخدم";
   //-----------------------------------------
   return (
     <>
@@ -34,37 +33,43 @@ const UserButton = () => {
         <DropdownMenuTrigger asChild>
           <Button variant={null}>
             <RiAccountCircleFill
-              className="w-10 h-10 cursor-pointer text-gray-100 hover:text-gray-300 transition-all duration-300"
+              className="w-10 h-10 cursor-pointer text-gray-100 hover:text-gray-300 transition-all duration-300 "
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             />
           </Button>
         </DropdownMenuTrigger>
-        <DropdownMenuContent className={`w-56 ${inter.className}`}>
-          <DropdownMenuLabel>My Account</DropdownMenuLabel>
+        <DropdownMenuContent className={`w-56`}>
+          <DropdownMenuLabel className="text-right">
+            {isSignedIn ? `مرحبًا، ${userName}` : "مرحبًا، زائر"}
+          </DropdownMenuLabel>
           <DropdownMenuSeparator />
           <DropdownMenuGroup>
             {isSignedIn ? (
               <>
                 <Link href="/profile">
-                  <DropdownMenuItem>Profile</DropdownMenuItem>
+                  <DropdownMenuItem className="flex justify-end">
+                    الملف الشخصي
+                  </DropdownMenuItem>
                 </Link>
                 <Link href="/settings">
-                  <DropdownMenuItem>Settings</DropdownMenuItem>
+                  <DropdownMenuItem className="flex justify-end">
+                    الإعدادات
+                  </DropdownMenuItem>
                 </Link>
               </>
             ) : (
               <>
                 <Link href="/login">
-                  <DropdownMenuItem>Sign in</DropdownMenuItem>
+                  <DropdownMenuItem className="flex justify-end">
+                    تسجيل الدخول
+                  </DropdownMenuItem>
                 </Link>
               </>
             )}
           </DropdownMenuGroup>
         </DropdownMenuContent>
       </DropdownMenu>
-      <div
-        className={`absolute right-4 xl:right-36 top-12 z-10 ${inter.className}`}
-      ></div>
+      <div className={`absolute right-4 xl:right-36 top-12 z-10`}></div>
     </>
   );
 };
