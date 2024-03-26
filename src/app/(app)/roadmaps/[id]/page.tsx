@@ -1,7 +1,9 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Button } from "@/components/ui/button";
 import { roadmaps } from "@/lib/tempData";
-// import Link from "next/link";
+import Link from "next/link";
 import React from "react";
+import { IoIosArrowBack } from "react-icons/io";
 
 const SingleRoadmapPage = ({ params: id }: { params: { id: string } }) => {
   const roadmapId = id.id;
@@ -13,7 +15,7 @@ const SingleRoadmapPage = ({ params: id }: { params: { id: string } }) => {
   if (!roadmap) {
     return (
       <>
-      {/* TODO: make  a better 404 page later */}
+        {/* TODO: make  a better 404 page later */}
         <h1>404</h1>
         <p>roadmap not found</p>
       </>
@@ -49,6 +51,13 @@ const SingleRoadmapPage = ({ params: id }: { params: { id: string } }) => {
         <h2 className="text-6xl font-bold capitalize text-center">
           {roadmap.name}
         </h2>
+        <Button
+          variant="secondary"
+          className="flex justify-center items-center gap-1 hover:gap-2 transition-all"
+        >
+          <IoIosArrowBack className="w-5 h-5" />
+          <Link href="/roadmaps">ارجع لكل الخرائط</Link>
+        </Button>
         <section className="flex flex-col gap-4">
           {roadmap.blocks.map((block) => (
             <div key={block.blockNumber} className="flex flex-col gap-4">
@@ -60,7 +69,7 @@ const SingleRoadmapPage = ({ params: id }: { params: { id: string } }) => {
                   <div //For some reason, Link is causing hydration error, fix later...
                     className="relative group"
                     key={step.name}
-                  //  href={`/roadmaps/${roadMapID}/${step.name}`}
+                    //  href={`/roadmaps/${roadMapID}/${step.name}`}
                   >
                     <div
                       className={`w-full h-full rounded-md absolute  border-2 top-0 left-0 transition-all duration-500 -z-10`}
