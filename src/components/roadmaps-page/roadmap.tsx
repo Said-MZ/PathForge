@@ -31,7 +31,7 @@ const Roadmap = ({
 }) => {
   return (
     <Link
-      href={`/roadmap/${roadmap.id}`}
+      href={`/roadmaps/${roadmap.id}`}
       className="w-full p-4 dark:bg-neutral-900 bg-neutral-100  dark:text-neutral-100 text-neutral-900 shadow-md rounded-md border-2 relative group dark:hover:brightness-125 hover:brightness-90 transition-all"
     >
       <div className="absolute -top-4 right-2 sm:text-5xl text-3xl group-hover:rotate-[20deg] transition-transform duration-500">
