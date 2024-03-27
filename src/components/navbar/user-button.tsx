@@ -18,7 +18,7 @@ import Link from "next/link";
 const UserButton = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   // temporary until we set up authentication
-  const isSignedIn = false;
+  const isSignedIn = true;
   const userName = "اسم المستخدم";
   //-----------------------------------------
   return (
