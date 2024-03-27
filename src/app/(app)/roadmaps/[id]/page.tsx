@@ -61,7 +61,7 @@ const SingleRoadmapPage = ({ params: id }: { params: { id: string } }) => {
         <section className="flex flex-col gap-4">
           {roadmap.blocks.map((block) => (
             <div key={block.blockNumber} className="flex flex-col gap-4">
-              <h3 className="text-lg font-bold text-neutral-50 mt-8 mb-4">
+              <h3 className="text-lg font-bold dark:text-neutral-50 mt-8 mb-4">
                 Block: {block.blockNumber}
               </h3>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-8 px-2 z-10">
@@ -81,7 +81,7 @@ const SingleRoadmapPage = ({ params: id }: { params: { id: string } }) => {
                     ></div>
                     <div
                       key={step.name}
-                      className={`z-10 flex flex-col gap-4 p-4 border-[1px] rounded-md bg-neutral-900 text-neutral-100 w-full min-h-48 -translate-x-3 -translate-y-3 group-hover:translate-x-0 group-hover:translate-y-0 transition-all`}
+                      className={`z-10 flex flex-col gap-4 p-4 border-[1px] rounded-md dark:bg-neutral-900 bg-neutral-100 dark:text-neutral-100 w-full min-h-48 -translate-x-3 -translate-y-3 group-hover:translate-x-0 group-hover:translate-y-0 transition-all`}
                     >
                       <h4 className="text-3xl font-bold">{step.name}</h4>
                       <p>{step.description}</p>

@@ -33,7 +33,7 @@ const UserButton = () => {
         <DropdownMenuTrigger asChild>
           <Button variant={null}>
             <RiAccountCircleFill
-              className="w-10 h-10 cursor-pointer text-gray-100 hover:text-gray-300 transition-all duration-300 "
+              className="w-10 h-10 cursor-pointer dark:text-gray-100 dark:hover:text-gray-300 hover:text-neutral-700 transition-all duration-300"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             />
           </Button>
