@@ -49,7 +49,8 @@ const AddRoadmapPage = () => {
           <span>الصفحة الرئيسية</span>
         </Link>
       </Button>
-      <form className="flex flex-col gap-4 text-right mt-6 w-full max-w-96 px-6 py-8">
+      <h1 className="text-4xl font-bold text-center">إضافة خريطة تعلم</h1>
+      <form className="flex flex-col gap-4 text-right mt-6 w-full max-w-xl px-6 py-8">
         <Label htmlFor="name">عنوان الخريطة</Label>
         <Input
           type="text"
