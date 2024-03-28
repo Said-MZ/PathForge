@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
 import { RiAccountCircleFill } from "react-icons/ri";
-import { Inter } from "next/font/google";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -18,7 +17,7 @@ import Link from "next/link";
 const UserButton = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   // temporary until we set up authentication
-  const isSignedIn = true;
+  const isSignedIn = false;
   const userName = "اسم المستخدم";
   //-----------------------------------------
   return (

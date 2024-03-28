@@ -152,16 +152,7 @@ const AddRoadmapPage = () => {
               required
               className="text-right"
             />
-            <Label htmlFor={`resources-${index + 1}`}>
-              المصادر المستخدمة في المرحلة {index + 1}
-            </Label>
-            <Input
-              type="text"
-              id={`resources-${index + 1}`}
-              placeholder={`المصادر المستخدمة في المرحلة ${index + 1}`}
-              required
-              className="text-right"
-            />
+            <Resources index={index} />
           </div>
         ))}
         <Button variant="default" className="w-full">
@@ -173,3 +164,47 @@ const AddRoadmapPage = () => {
 };
 
 export default AddRoadmapPage;
+
+const Resources = ({ index }: { index: number }) => {
+  const [level, setLevel] = useState<number>(1);
+
+  return (
+    <>
+      <Label htmlFor={`resources-${index + 1}`}>عدد الموارد المتاحة</Label>
+      <Input
+        type="number"
+        id={`resources-${index + 1}`}
+        placeholder="عدد الموارد"
+        required
+        className="text-right"
+        min={1}
+        max={6}
+        value={level}
+        onChange={(e) => setLevel(parseInt(e.target.value))}
+      />
+      {Array.from({ length: level }).map((_, index) => (
+        <div key={index} className="flex flex-col gap-5 py-4">
+          <Label htmlFor={`resource-${index + 1}`}>
+            عنوان المصدر {index + 1}
+          </Label>
+          <Input
+            type="text"
+            id={`resource-${index + 1}`}
+            placeholder={`المصدر ${index + 1}`}
+            required
+            className="text-right"
+          />
+
+          <Label htmlFor={`link-${index + 1}`}>رابط المصدر {index + 1}</Label>
+          <Input
+            type="url"
+            id={`link-${index + 1}`}
+            placeholder="رابط المصدر"
+            required
+            className="text-right"
+          />
+        </div>
+      ))}
+    </>
+  );
+};
